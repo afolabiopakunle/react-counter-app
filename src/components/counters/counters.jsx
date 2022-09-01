@@ -7,7 +7,7 @@ class Counters extends Component {
     return (
     <div>
       <Counter />
-
+      <Counter />
       <Counter />
     </div>)
   }
