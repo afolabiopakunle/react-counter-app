@@ -4,7 +4,6 @@ class Counter extends Component {
 
   state = {
     count: 0,
-    tags: ['tag A', 'tag B', 'tag C', 'tag D']
   }   
 
   styles = {
@@ -18,11 +17,6 @@ class Counter extends Component {
     <div>
       <span onClick={this.decreaseCount} style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
       <button onClick={() => this.increaseCount('Hi')} className="btn btn-secondary btn-sm">Increment</button>
-      <div>
-        <ul>
-          {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
-        </ul>
-      </div>
     </div>
     )
   }
