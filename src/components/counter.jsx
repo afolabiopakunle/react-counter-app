@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Counter extends Component {
 
   state = {
-    count: 0,
+    count: this.props.value,
   }   
 
   styles = {
@@ -12,6 +12,7 @@ class Counter extends Component {
   }
 
   render() {
+    console.log(this.props)
 
     return (
     <div>
