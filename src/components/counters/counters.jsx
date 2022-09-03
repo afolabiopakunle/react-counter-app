@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import Counter from '../counter';
+import Counter from '../counter';;
 
 
 
@@ -15,14 +15,17 @@ class Counters extends Component {
     ]
   }
 
-  handleDelete = () => {
-    console.log('Delete handled')
+  handleDelete = (counterId) => {
+    console.log(counterId);
+    let counters = this.state.counters.filter(counter => counter.id != counterId)
+    this.setState({counters})
   }
   render() {
-
+    if(this.state.counters.length === 0) return <p className="fw-bold text-center">No counters</p>
     return (
     <div>
-      {this.state.counters.map(counter => <Counter key={counter.id} value={counter.value} onHandleDelete={() => this.handleDelete()}/>)}
+      <button className="btn btn-sm btn-outline-primary m-4">Reset</button>
+      {this.state.counters.map(counter => <Counter key={counter.id} id={counter.id} value={counter.value} onHandleDelete={(counterId) => this.handleDelete(counterId)}/>)}
     </div>)
   }
 }
